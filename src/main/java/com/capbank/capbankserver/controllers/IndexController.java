@@ -41,4 +41,12 @@ public class IndexController {
         return getError;
     }
 
+    @GetMapping("/verify")
+    public ModelAndView getVerify(){
+        ModelAndView getError = new ModelAndView("login");
+        System.out.println("in verify page");
+        getError.addObject("PageTitle", "Error");
+        return getError;
+    }
+
 }

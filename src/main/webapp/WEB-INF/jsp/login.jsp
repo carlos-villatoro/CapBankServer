@@ -21,8 +21,23 @@
         <h1 class="form-header card-title mb-3">
             <i class="fa fa-user-circle"></i> Login
         </h1>
+        <c:if test="${requestScope.success != null}">
+            <div class="alert alert-success text-center border border-success">
+                <b>${requestScope.success}</b>
+            </div>
+        </c:if>
+        <c:if test="${requestScope.error != null}">
+            <div class="alert alert-danger text-center border border-danger">
+                <b>${requestScope.error}</b>
+            </div>
+        </c:if>
+        <c:if test="${logged_out != null}">
+            <div class="alert alert-info text-center border border-info">
+                <b>${logged_out}</b>
+            </div>
+        </c:if>
 
-        <form action="" class="login-form">
+        <form action="/login" method="POST" class="login-form">
 
             <div class="form-group col">
                 <input type="email" name="email" class="form-control form-control-lg" placeholder="Enter email" />

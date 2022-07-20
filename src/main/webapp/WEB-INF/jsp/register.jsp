@@ -26,6 +26,17 @@
             <i class="fa fa-edit"></i> Register
         </h1>
 
+        <c:if test="${requestScope.passwordMisMatch != null}">
+            <div class="alert alert-danger text-center border border-danger">
+                <b>${requestScope.passwordMisMatch}</b>
+            </div>
+        </c:if>
+        <c:if test="${requestScope.success != null}">
+            <div class="alert alert-success text-center border border-success">
+                <b>${requestScope.success}</b>
+            </div>
+        </c:if>
+
         <form:form action="/register" class="reg-form" modelAttribute="registerUser">
             <div class="row">
 

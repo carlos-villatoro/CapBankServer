@@ -42,7 +42,11 @@
 
     <div class="card-body">
         <p class="card-text">
-            THIS IS THE ERROR TEXT
+            <c:if test="${requestScope.error != null}">
+            <div class="alert alert-danger text-center border border-danger">
+                <b>${requestScope.error}</b>
+            </div>
+            </c:if>
         </p>
 
         <hr>

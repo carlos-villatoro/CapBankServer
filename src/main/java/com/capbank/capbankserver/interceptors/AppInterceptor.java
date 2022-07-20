@@ -20,15 +20,15 @@ public class AppInterceptor implements HandlerInterceptor {
             HttpSession session = request.getSession();
 
             // TODO: Get Token Stored In Session:
-            String token = (String) session.getAttribute("token");
-            System.out.println(token);
+//            String token = (String) session.getAttribute("token");
+//            System.out.println(token);
             // TODO: Get User Object Stored In Session:
             User user = (User)session.getAttribute("user");
             // TODO: Check if Authenticated:
             // boolean isAuthenticated = (boolean) session.getAttribute("authenticated");
 
             // TODO: Validate Session Attributes / Objects:
-            if(token == null || user == null){
+            if(user == null){
                 response.sendRedirect("/login");
                 return false;
             }

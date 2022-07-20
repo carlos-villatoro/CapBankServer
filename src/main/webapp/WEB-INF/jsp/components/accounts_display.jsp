@@ -2,7 +2,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix = "fn" uri = "http://java.sun.com/jsp/jstl/functions" %>
 
-<!-- offcanvas buttons -->
+<!-- Container -->
 <div class="container d-flex">
 
     <!-- new acct btn -->
@@ -16,9 +16,12 @@
             data-bs-target="#offcanvasLeft" aria-controls="offcanvasLeft">
         <i class="fa fa-credit-card"></i> Add New Transaction
     </button>
+    <!-- End Of Transaction Button -->
 
 </div>
+<!-- End Of Container -->
 
+<!-- Container: Total Accounts Balance Display  -->
 <div class="container d-flex py-3">
     <h2 class="me-auto">Total Accounts Balance:</h2>
     <h2 class="ms-auto">
@@ -27,7 +30,9 @@
         </c:if>
     </h2>
 </div>
+<!-- End Of Container: Total Accounts Balance Display  -->
 
+<!-- Container: Accordion Menu / Drop Down -->
 <div class="container">
     <!-- Accordion Menu / Drop Down -->
     <c:if test="${requestScope.userAccounts != null }">
@@ -43,6 +48,7 @@
                     </h2>
                     <div id="flush-${account.account_id}" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
                         <div class="accordion-body">
+                            <!-- Account Details List -->
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item d-flex">Account Name <span class="ms-auto"><b>${account.account_name}</b></span></li>
                                 <li class="list-group-item d-flex">Account Number <span class="ms-auto"><b>${account.account_number}</b></span></li>
@@ -50,6 +56,7 @@
                                 <li class="list-group-item d-flex">Account Balance <span class="ms-auto"><b>${account.balance}</b></span></li>
                                 <li class="list-group-item d-flex">Created at <span class="ms-auto"><b>${account.created_at}</b></span></li>
                             </ul>
+                            <!-- Account Details List -->
                         </div>
                     </div>
                 </div>
@@ -57,5 +64,6 @@
         </c:forEach>
 
     </c:if>
+    <!-- End Of Accordion Menu / Drop Down -->
 </div>
-<!-- accounts accordion -->
+<!-- End Of Container: Accordion Menu / Drop Down -->

@@ -2,7 +2,7 @@ package com.capbank.capbankserver.controllers;
 
 import com.capbank.capbankserver.models.Account;
 import com.capbank.capbankserver.models.PaymentHistory;
-import com.capbank.capbankserver.models.TransactionHistory;
+import com.capbank.capbankserver.models.Transactions;
 import com.capbank.capbankserver.models.User;
 import com.capbank.capbankserver.repositories.AccountRepository;
 import com.capbank.capbankserver.repositories.PaymentHistoryRepository;
@@ -71,7 +71,7 @@ public class AppController {
 
         user = (User) session.getAttribute("user");
 
-        List<TransactionHistory> userTransactHistory = transactHistoryRepository.getTransactionRecordsById(user.getUser_id());
+        List<Transactions> userTransactHistory = transactHistoryRepository.getTransactionRecordsById(user.getUser_id());
 
         getTransactHistoryPage.addObject("transact_history", userTransactHistory);
 

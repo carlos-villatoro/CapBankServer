@@ -11,20 +11,20 @@
         </div>
 
         <!-- nav -->
-        <nav class="navbar">
-            <li><a href="">Dashboard</a></li>
-            <li><a href="">Payments</a></li>
-            <li><a href="">Transactions</a></li>
+        <nav class="navigation">
+            <li><a href="/app/dashboard">Dashboard</a></li>
+            <li><a href="/app/payment_history">Payment History</a></li>
+            <li><a href="/app/transact_history">Transaction History</a></li>
         </nav>
 
         <!-- current user -->
         <div class="display-name ms-auto text-white">
             <i class="fa fa-circle text-success "></i>
-            <span>User</span>
+            <span>${user.first_name}  ${user.last_name}</span>
         </div>
 
         <!-- log out -->
-        <a href="" class="btn btn-sm text-white ms-2">
+        <a href="/logout" class="btn btn-sm text-white ms-2">
             <i class="fas fa-sign-out-alt "></i>Sign Out
         </a>
 

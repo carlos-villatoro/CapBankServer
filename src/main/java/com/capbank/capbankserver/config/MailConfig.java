@@ -12,16 +12,26 @@ public class MailConfig {
         JavaMailSenderImpl emailConfig = new JavaMailSenderImpl();
 
         Properties props = emailConfig.getJavaMailProperties();
+        props.put("mail.smtp.starttls.enabled", "true");
         props.put("mail.transport.protocol", "smtp");
         props.put("mail.smtp.auth", "true");
-        props.put("mail.smtp.starttls.enabled", "true");
         props.put("mail.debug", "true"); // turn off for live deploy
 
         // set mail creds
-        emailConfig.setHost("smtp.gmail.com");
-        emailConfig.setPort(25);
-        emailConfig.setUsername("capbank425@gmail.com");
-        emailConfig.setPassword("ihkoclhledvwgnih");
+        emailConfig.setHost("smtp.mailtrap.io");
+        emailConfig.setPort(2525);
+        emailConfig.setUsername("82e4ee364ec23f");
+        emailConfig.setPassword("47606b2fd5b2c1");
+//        emailConfig.setPassword("ihkoclhledvwgnih");
+
+//        play.mailer {
+//  host = "smtp.mailtrap.io"
+//  port = 2525
+//  ssl = no
+//  tls = yes
+//  user = "82e4ee364ec23f"
+//  password = "47606b2fd5b2c1"
+//}
 
         return emailConfig;
     }

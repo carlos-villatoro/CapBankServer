@@ -66,7 +66,7 @@ public class RegisterController {
         int code = bound * rand.nextInt(bound);
 
         // TODO: GET EMAIL HTML BODY:
-        String emailBody = HTML.htmlEmailTemplate(token, code);
+        String emailBody = HTML.htmlEmailTemplate(token, String.valueOf(code));
         // TODO: HASH PASSWORD:
         String hashed_password = BCrypt.hashpw(password, BCrypt.gensalt());
 
@@ -74,7 +74,7 @@ public class RegisterController {
         userRepository.registerUser(first_name, last_name, email, hashed_password, token, code);
 
         // TODO: SEND EMAIL NOTIFICATION:
-        MailSender.htmlEmailSender("no-reply@somecompany.com", email, "Verify Account", emailBody);
+//        MailSender.htmlEmailSender("capbank425@gmail.com", email, "Verify Account", emailBody);
 
         // TODO: RETURN TO REGISTER PAGE:
         String successMessage = "Account Registered Successfully, Please Check your Email and Verify Account!";

@@ -25,9 +25,9 @@ public class AuthController {
         System.out.println("In Login Page Controller");
         ModelAndView getLoginPage = new ModelAndView("login");
 
-        String token = Token.generateToken();
+//        String token = Token.generateToken();
 
-        getLoginPage.addObject("token", token);
+//        getLoginPage.addObject("token", token);
         getLoginPage.addObject("PageTitle", "Login");
         return getLoginPage;
     }
@@ -35,7 +35,7 @@ public class AuthController {
     @PostMapping("/login")
     public String login(@RequestParam("email")String email,
                         @RequestParam("password") String password,
-                        @RequestParam("_token")String token,
+//                        @RequestParam("_token")String token,
                         Model model,
                         HttpSession session){
 
@@ -81,7 +81,7 @@ public class AuthController {
 
         // Set Session Attributes:
         session.setAttribute("user", user);
-        session.setAttribute("token", token);
+//        session.setAttribute("token", token);
         session.setAttribute("authenticated", true);
 
         return "redirect:/app/dashboard";

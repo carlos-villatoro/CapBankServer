@@ -18,31 +18,22 @@ public class IndexController {
     public ModelAndView getIndex(){
         ModelAndView getIndexPage = new ModelAndView("index");
         getIndexPage.addObject("PageTitle", "Home");
-        System.out.println("in index controller");
+        System.out.println("In Index Page Controller");
         return getIndexPage;
     }
-
-    @GetMapping("/login")
-    public ModelAndView getLogin(){
-        ModelAndView getLogin = new ModelAndView("login");
-        System.out.println("in login page");
-        getLogin.addObject("PageTitle", "Login");
-        return getLogin;
-    }
-
-    @SuppressWarnings("SpringMVCViewInspection")
 
 
     @GetMapping("/error")
     public ModelAndView getError(){
-        ModelAndView getError = new ModelAndView("error");
-        System.out.println("in error page");
-        getError.addObject("PageTitle", "Error");
-        return getError;
+        ModelAndView getErrorPage = new ModelAndView("error");
+        getErrorPage.addObject("PageTitle", "Errors");
+        System.out.println("In Error Page Controller");
+        return getErrorPage;
     }
 
     @GetMapping("/verify")
     public ModelAndView getVerify(@RequestParam("token")String token, @RequestParam("code") String code){
+        // Set View:
         ModelAndView getVerifyPage;
 
         // Get Token In Database:

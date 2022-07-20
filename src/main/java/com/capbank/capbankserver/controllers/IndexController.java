@@ -25,13 +25,7 @@ public class IndexController {
     }
 
     @SuppressWarnings("SpringMVCViewInspection")
-    @GetMapping("/register")
-    public ModelAndView getRegister(){
-        ModelAndView getRegister = new ModelAndView("register");
-        System.out.println("in register page");
-        getRegister.addObject("PageTitle", "Register");
-        return getRegister;
-    }
+
 
     @GetMapping("/error")
     public ModelAndView getError(){

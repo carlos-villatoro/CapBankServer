@@ -40,7 +40,6 @@ public class AccountController {
         // TODO: CREATE ACCOUNT:
         accountRepository.createBankAccount(user.getUser_id(), bankAccountNumber, accountName, accountType);
 
-        // Set Success message:
         redirectAttributes.addFlashAttribute("success", "Account Created Successfully!");
         return "redirect:/app/dashboard";
     }

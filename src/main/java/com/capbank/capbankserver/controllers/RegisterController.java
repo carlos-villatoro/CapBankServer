@@ -24,7 +24,7 @@ public class RegisterController {
     }
 
     @PostMapping("/register")
-    public ModelAndView register(@Valid @ModelAttribute("registerUser")User user, BindingResult result,
+    public ModelAndView register(@Valid @ModelAttribute("registerUser")User user, BindingResult result, // binds the form inputs to the annotations in schema
                                  @RequestParam("first_name") String first_name,
                                  @RequestParam("last_name") String last_name,
                                  @RequestParam("email") String email,

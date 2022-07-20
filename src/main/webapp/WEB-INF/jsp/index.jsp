@@ -1,3 +1,4 @@
+<%--suppress ALL --%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,8 +24,8 @@
 
     <!-- buttons -->
     <div class="button-wrapper d-flex aligh-items-center">
-        <a href="/register.html" class="btn btn-md register" role="button">Register</a>
-        <a href="/login.html" class="btn btn-md login" role="button">Login</a>
+        <a href="/register" class="btn btn-md register" role="button">Register</a>
+        <a href="/login" class="btn btn-md login" role="button">Login</a>
     </div>
 
 </div>
